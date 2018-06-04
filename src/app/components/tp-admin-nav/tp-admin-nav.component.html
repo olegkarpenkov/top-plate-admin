@@ -1,0 +1,16 @@
+<nav class="tp-admin-nav roboto-bold uppercase">
+
+  <div class="tp-admin-nav-logo"></div>
+
+  <ul class="tp-admin-nav-links">
+
+    <li class="tp-admin-nav-link" *ngFor="let link of links" [ngClass]="{'isSelected': link.isSelected}"
+        (click)="onLinkClick(link)">
+
+      <a class="tp-admin-nav-link-wrapper"><span>{{link.label}}</span></a>
+
+    </li>
+
+  </ul>
+
+</nav>

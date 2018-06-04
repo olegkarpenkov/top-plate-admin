@@ -1,0 +1,24 @@
+.sign-in-route {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+
+  .sign-in-form {
+    padding: 50px;
+    border: 1px solid #ddd;
+    width: 400px;
+
+    .error-message {
+      background: #f00;
+      color: #fff;
+      padding: 10px;
+    }
+  }
+}

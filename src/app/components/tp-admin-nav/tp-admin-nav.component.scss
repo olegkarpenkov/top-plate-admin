@@ -1,0 +1,59 @@
+@import "../../mixins";
+
+.tp-admin-nav {
+
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: #333;
+  padding: 0 20px;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 10;
+
+  .tp-admin-nav-logo {
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    background-size: cover;
+    background-image: url(../../../assets/top_plate_approved.png);
+  }
+
+  .tp-admin-nav-links {
+    margin-bottom: 0;
+  }
+
+  .tp-admin-nav-link {
+    display: inline-block;
+    position: relative;
+    padding: 7px;
+    cursor: pointer;
+
+    .tp-admin-nav-link-wrapper {
+      color: $white;
+      text-decoration: none;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: $half-size;
+      width: 0;
+      border-bottom: 2px solid $white;
+      @include use-transition();
+    }
+
+    &.isSelected {
+      &:after {
+        left: 0;
+        width: $full-size;
+      }
+    }
+  }
+}
+

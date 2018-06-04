@@ -1,0 +1,37 @@
+<div class="container home-page">
+
+  <div class="row">
+
+    <h1>General</h1>
+
+    <form class="container p-5">
+
+      <div class="form-group">
+        <label for="general-data-description">DESCRIPTION</label>
+        <textarea class="form-control" id="general-data-description" name="description" [disabled]="!editMode || onSave" [(ngModel)]="generalData.description"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="general-data-address">ADDRESS</label>
+        <textarea class="form-control" id="general-data-address" name="address" [disabled]="!editMode || onSave" [(ngModel)]="generalData.address"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="general-data-email">EMAIL</label>
+        <input name="email" class="form-control"  id="general-data-email" [disabled]="!editMode || onSave" [(ngModel)]="generalData.email">
+      </div>
+
+      <div class="form-group">
+        <label for="general-data-phone">PHONE</label>
+        <input name="phone" class="form-control"  id="general-data-phone" [disabled]="!editMode || onSave" [(ngModel)]="generalData.phone">
+      </div>
+
+      <div class="form-group">
+        <input type="button" class="btn btn-default mr-5" *ngIf="editMode" value="CANCEL" [disabled]="onSave" (click)="toggleEditMode()">
+        <input type="button" class="btn btn-default mr-5" *ngIf="!editMode" value="EDIT" [disabled]="editMode || onSave" (click)="toggleEditMode()">
+        <input type="button" class="btn btn-primary mr-5" value="SAVE" [disabled]="!editMode || onSave" (click)="saveChanges()">
+      </div>
+    </form>
+  </div>
+</div>
+
